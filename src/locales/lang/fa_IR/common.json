@@ -1,0 +1,24 @@
+{
+    "common": {
+      "okText": "تأیید",
+      "closeText": "بستن",
+      "cancelText": "انصراف",
+      "loadingText": "در حال بارگذاری...",
+      "saveText": "ذخیره",
+      "delText": "حذف",
+      "resetText": "بازنشانی",
+      "searchText": "جستجو",
+      "queryText": "جستجو",
+  
+      "inputText": "لطفاً وارد کنید",
+      "chooseText": "لطفاً انتخاب کنید",
+  
+      "redo": "بارگذاری مجدد",
+      "back": "بازگشت",
+  
+      "light": "روشن",
+      "dark": "تاریک"
+      
+    }
+  }
+  

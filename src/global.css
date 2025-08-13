@@ -1,0 +1,271 @@
+/* import font */
+@font-face {
+  font-family: "IRSans";
+  src: url("/fonts/IRANSansFaNum.ttf") format("truetype");
+  /* font-weight: 900; */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRSans";
+  src: url("/fonts/iranwebyekan/iranyekanwebbold.woff") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRSans";
+  src: url("/fonts/iranwebyekan/iranyekanweblight.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRSans";
+  src: url("/fonts/iranwebyekan/iranyekanwebregular.woff") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRSans";
+  src: url("/fonts/CiceroSansNegrita.ttf") format("truetype");
+  font-weight: 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* editor */
+@import "react-quill/dist/quill.snow.css";
+
+/* import tailwind */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* config  tailwind */
+@config "../tailwind.config.ts";
+
+/* base layer */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    /* https://tailwindcss.com/docs/upgrade-guide#default-border-color */
+    border-color: rgba(
+      var(--colors-palette-gray-500Channel) / var(--opacity-border)
+    );
+  }
+
+  body {
+    background-color: var(--background);
+  }
+}
+
+@theme {
+  --animate-collapsible-down: collapsible-down 0.2s ease-in-out;
+  --animate-collapsible-up: collapsible-up 0.2s ease-in-out;
+  @keyframes collapsible-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes collapsible-up {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  --animate-slow-spin: spin 4s linear infinite;
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Shadcn UI Light Theme */
+:root {
+  --radius: 0.5rem;
+  --background: var(--colors-common-white);
+  --foreground: var(--colors-common-black);
+  --card: var(--colors-common-white);
+  --card-foreground: var(--colors-common-black);
+  --popover: var(--colors-common-white);
+  --popover-foreground: var(--colors-common-black);
+  --primary: var(--colors-palette-primary-default);
+  --primary-foreground: var(--colors-palette-primary-lighter);
+  --secondary: var(--colors-palette-gray-200);
+  --secondary-foreground: var(--colors-palette-gray-600);
+  --muted: var(--colors-palette-gray-200);
+  --muted-foreground: var(--colors-palette-gray-500);
+  --accent: var(--colors-palette-gray-200);
+  --accent-foreground: var(--colors-palette-gray-600);
+  --destructive: var(--colors-palette-error-default);
+  --border: rgba(var(--colors-palette-gray-500Channel) / var(--opacity-border));
+  --input: rgba(var(--colors-palette-gray-500Channel) / var(--opacity-border));
+  --ring: var(--colors-palette-primary-default);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: var(--colors-palette-gray-200);
+  --sidebar-foreground: var(--colors-palette-gray-800);
+  --sidebar-primary: var(--colors-palette-primary-default);
+  --sidebar-primary-foreground: var(--colors-palette-primary-lighter);
+  --sidebar-accent: var(--colors-palette-gray-200);
+  --sidebar-accent-foreground: var(--colors-palette-gray-800);
+  --sidebar-border: var(--colors-palette-gray-200);
+  --sidebar-ring: var(--colors-palette-primary-default);
+}
+
+/* Shadcn UI Dark Theme */
+[data-theme-mode="dark"] {
+  --background: var(--colors-common-black);
+  --foreground: var(--colors-common-white);
+  --card: var(--colors-common-black);
+  --card-foreground: var(--colors-common-white);
+  --popover: var(--colors-common-black);
+  --popover-foreground: var(--colors-common-white);
+  --primary: var(--colors-palette-primary-default);
+  --primary-foreground: var(--colors-palette-primary-darker);
+  --secondary: var(--colors-background-neutral);
+  --secondary-foreground: var(--colors-palette-gray-500);
+  --muted: var(--colors-background-neutral);
+  --muted-foreground: var(--colors-palette-gray-400);
+  --accent: var(--colors-background-neutral);
+  --accent-foreground: var(--colors-palette-gray-500);
+  --destructive: var(--colors-palette-error-default);
+  --border: rgba(var(--colors-palette-gray-500Channel) / var(--opacity-border));
+  --input: rgba(var(--colors-palette-gray-500Channel) / var(--opacity-border));
+  --ring: var(--colors-palette-primary-default);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: var(--colors-background-neutral);
+  --sidebar-foreground: var(--colors-common-white);
+  --sidebar-primary: var(--colors-palette-primary-default);
+  --sidebar-primary-foreground: var(--colors-palette-primary-darker);
+  --sidebar-accent: var(--colors-background-neutral);
+  --sidebar-accent-foreground: var(--colors-common-white);
+  --sidebar-border: rgba(
+    var(--colors-palette-gray-500Channel) / var(--opacity-border)
+  );
+  --sidebar-ring: var(--colors-palette-primary-default);
+}
+
+.rmdp-top-class {
+  background: var(--background);
+  box-shadow: 1px 1px 1px var(--background) !important;
+}
+.rmdp-top-class * {
+  color: var(--card-foreground);
+}
+
+.rmdp-day.rmdp-selected {
+  color: var(--primary-foreground);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sidebar);
+  border-radius: 5px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sidebar) transparent;
+}
+
+/* slash layout */
+:root {
+  --layout-nav-width: 260px;
+  --layout-nav-width-mini: 88px;
+  --layout-nav-height-horizontal: 48px;
+  --layout-header-height: 64px;
+  --layout-multi-tabs-height: 48px;
+}
+
+body {
+  direction: rtl;
+}
+body * {
+  font-family: "IRSans";
+  direction: rtl;
+}
+input {
+  font-family: "IRSans" !important;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+/* AccessModal.css */
+
+.custom-tree .ant-tree-switcher {
+  order: 2; /* آیکون باز/بسته بره سمت راست */
+}
+/* .custom-tree * svg path {
+  fill: red;
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+} */
+
+.custom-tree .ant-tree-node-content-wrapper {
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.custom-tree .ant-tree-node-content-wrapper:hover {
+  background: var(--tree-hover-bg);
+  color: var(--tree-hover-text);
+}
+.RightOutlined-collapse {
+  color: var(--chart-5) !important;
+}
+.RightOutlined-tree {
+  color: var(--chart-4) !important;
+}
+.tree-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* background: var(--tree-item-bg); */
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: var(--tree-item-shadow);
+}
+
+.tree-title {
+  font-weight: 500;
+  color: var(--tree-title-color);
+}
