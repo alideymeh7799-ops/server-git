@@ -1,1 +1,0 @@
-import{J as a}from"./index-Bt7t-uRm.js";import{r as i}from"./vendor-core-CiUIJZ_7.js";const m=()=>{const r=a(e=>e.serverReq);return{can:i.useCallback((e,n)=>{const t=r.find(o=>o.name===e);return t?t.items.includes(n):!1},[r])}},l=(r,s,e)=>`api/${r}/${s}${e?`/${e}`:""}`;export{l as b,m as u};
